@@ -34,12 +34,16 @@
 PROG=$1
 
 ## Uncomment body of function if you want to log to DB
+## if you do not want do log to DB, comment the body and
+## add a ":" (null command)
+## see http://tldp.org/LDP/abs/html/functions.html#EMPTYFUNC
 function logToDB() {
   #LOGUSER=''
   #LOGPASS=''
   #LOGDB=''
   #log_db="mysql $LOGUSER $LOGPASS $LOGDB -A -e"
   #$log_db "$1"
+  :
 }
 
 function log() {
