@@ -19,19 +19,23 @@ if [[ $ret -eq 1 ]] ; then
 fi
 ````
 
-##### Note 1: uncomment body of logToDB() if you want to log do database
+##### Note 1: Logging to database,
 ```` bash
+## Uncomment body of function if you want to log to DB
+## if you do not want do log to DB, comment the body and
+## add a ":" (null command)
+## see http://tldp.org/LDP/abs/html/functions.html#EMPTYFUNC
 function logToDB() {
   LOGUSER='-uroot'
   LOGPASS='-ppassword'
   LOGDB='log_db'
   log_db="mysql $LOGUSER $LOGPASS $LOGDB -A -e"
   $log_db "$1"
+  # :
 }
 ````
 
 ##### Note 2: to write to log file,
-
 ```` bash
 caller_program.sh >>caller_program.log 2>&1
 ````

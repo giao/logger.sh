@@ -93,6 +93,13 @@ function warn() {
 function err() {
   log ERROR $*
 }
+function error() {
+    log ERROR $*
+}
 function dbg() {
+  log DEBUG $*
+}
+
+function debug() {
   log DEBUG $*
 }
